@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextureSilo - Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+
+                <div class="navbar-item-left">
+                    <a href="/site/gallery/index.html">GALLERY</a>
+                </div>
+
+                <div class="navbar-item-center">
+                    <a href="#">TEXTURESILO</a>
+                </div>
+
+                <div class="navbar-item-right">
+                    <a href="/site/download/index.html">DOWNLOADS</a>
+                </div>
+        </div>
+        <div class="menu">
+            <div class="note">THESE TEXTURES ARE NOT PRODUCED PROFESSIONALLY, DO NOT EXPECT THE BEST RESULTS.</div>
+            <div class="text1">TextureSilo is a small place where i share my homemade PBR textures, made with simple procedures!</div>
+            <div class="image">
+                <img id="background" src="/display/fabric2.png">
+            </div>
+        </div>
+    </div>
+
+    <script> //change background
+        var backgroundimg = document.getElementById('background');
+        var onbackground = 1;
+        const imagearray = ["/display/fabric2.png", "/display/fabric1.png", "/display/stone_tiles.png", "/display/stone1.png", "/display/stone_tiles_notexture.png"];
+    
+        function Check() {
+            if (onbackground == 5)
+            {
+                onbackground = 0
+            }
+            if (onbackground == 4)
+            {
+                onbackground = 5
+                backgroundimg.src = imagearray[4]
+            }
+            if (onbackground == 3)
+            {
+                onbackground = 4
+                backgroundimg.src = imagearray[3]
+            }
+            if (onbackground == 2)
+            {
+                onbackground = 3
+                backgroundimg.src = imagearray[2]
+            }
+            if (onbackground == 1)
+            {
+                onbackground = 2
+                backgroundimg.src = imagearray[1]
+            }
+            if (onbackground == 0)
+            {
+                onbackground = 1
+                backgroundimg.src = imagearray[0]
+            }
+        }
+
+        function BackgroundChange() {
+            Check();
+            console.log(onbackground);
+            setTimeout(() => {
+            BackgroundChange();
+            }, 10000);
+        }
+            BackgroundChange();
+        
+    </script>
+</body>
+</html>
