@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextureSilo - Downloads</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="navbar">
+
+        <div class="navbar-item-left">
+            <a href="/site/gallery">GALLERY</a>
+        </div>
+
+        <div class="navbar-item-center">
+            <a href="/site/main">TEXTURESILO</a>
+        </div>
+
+        <div class="navbar-item-right">
+            <a href="#">DOWNLOADS</a>
+        </div>
+    </div>
+    <div class="download-section">
+        <div class="info-box">
+            <div class="box-part1">
+                <div class="name">Stone Tiles 1</div>
+                <div class="imagerep"><img src="representation/stone_tiles_1_rep.png" alt=""></div>
+            </div>
+            <div class="box-part2">
+                <div class="buttons">
+                    <div class="button-download"><button onclick="download('stone_tiles_1')">Download</button></div>
+                    <div class="button-view"><button onclick="details('stone_tiles_1')">View Details</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function download(whattodownload) {
+            if (whattodownload == "stone_tiles_1")
+            {
+                window.open("textures/stone-tiles-1")
+            }
+        }
+        function details(whattoview) {
+            if (whattoview == "stone_tiles_1")
+            {
+                window.open("textures/stone-tiles-1#details")
+            }
+        }
+    </script>
 </body>
 </html>
