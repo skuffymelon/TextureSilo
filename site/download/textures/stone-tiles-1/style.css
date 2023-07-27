@@ -87,13 +87,14 @@ body
     transition: 0.2s;
 }
 
-.download-box
+.download-section
 {
-    width: 100vw;
+    display: flex;
+    width: 100%;
     height: 88vh;
     background: linear-gradient(rgb(148,148,148),gray);
 }
-.download-box .sideleft
+.download-section .sideleft
 {
     display: flex;
     justify-content: flex-start;
@@ -105,7 +106,7 @@ body
     border-top-left-radius: 4vh;
     border-bottom-left-radius: 4vh;
 }
-.download-box .sideleft #imageslide
+.download-section .sideleft #imageslide
 {
     margin: 1vh;
     height: 80%;
@@ -113,7 +114,7 @@ body
     border-radius: 4vh;
     object-fit: cover;
 }
-.download-box .sideleft .imagechoose
+.download-section .sideleft .imagechoose
 {
     display: flex;
     justify-content: center;
@@ -124,7 +125,7 @@ body
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 4vh;
 }
-.download-box .sideleft .imagechoose img
+.download-section .sideleft .imagechoose img
 {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.15s;
     filter: opacity(0.5);
@@ -134,7 +135,7 @@ body
     height: 95%;
     object-fit: cover;
 }
-.download-box .sideleft .imagechoose img:hover
+.download-section .sideleft .imagechoose img:hover
 {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
     filter: opacity(0.9);
@@ -142,10 +143,256 @@ body
     width: 40%;
     cursor: pointer;
 }
-.download-box .sideleft .imagechoose img:active
+.download-section .sideleft .imagechoose img:active
 {
     filter: opacity(0.8);
     height: 97.5%;
     width: 38.5%;
     cursor: pointer;
+}
+.download-section .sideright
+{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-top-right-radius: 4vh;
+    border-bottom-right-radius: 4vh;
+}
+.download-section .sideright .centering
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.download-section .sideright .title
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    color: white;
+    background-color: rgba(105, 105, 105, 0.75);
+    border-top-right-radius: 4vh;
+    font-size: 4.5vh;
+}
+.download-section .sideright .qcontainer
+{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.download-section .sideright .quality
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+.download-section .sideright .jpgpngcontainer
+{
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.download-section .sideright .jpgpngcontainer .switch
+{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.download-section .sideright .quality .btn1
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(255, 255, 255),gray);
+    font-size: 4vh;
+    width: 10vh;
+    height: 10vh;
+}
+.download-section .sideright .quality .btn1:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    cursor: pointer;
+    background: radial-gradient(rgb(212, 212, 212),gray);
+    font-size: 4vh;
+    width: 11vh;
+    height: 11vh;
+}
+.download-section .sideright .quality .btn1:active
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    border-color: rgb(70, 70, 70);
+    width: 10.5vh;
+    height: 10.5vh;
+}
+.download-section .sideright .quality .btn3
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(188, 188, 188),gray);
+    font-size: 4vh;
+    width: 10vh;
+    height: 10vh;
+}
+.download-section .sideright .quality .btn3:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    cursor: pointer;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(212, 212, 212),gray);
+    font-size: 4vh;
+    width: 11vh;
+    height: 11vh;
+}
+.download-section .sideright .quality .btn3:active
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    border-color: rgb(70, 70, 70);
+    width: 10.5vh;
+    height: 10.5vh;
+}
+.download-section .sideright .qcontainer .qualitytext
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    color:white;
+    font-size: 4vh;
+    text-align: center;
+}
+.download-section .sideright .jpgpngcontainer .switch .btnjpg
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(255, 255, 255),gray);
+    font-size: 4vh;
+    width: 10vh;
+    height: 10vh;
+}
+.download-section .sideright .jpgpngcontainer .switch .btnjpg:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    cursor: pointer;
+    background: radial-gradient(rgb(212, 212, 212),gray);
+    font-size: 4vh;
+    width: 11vh;
+    height: 11vh;
+}
+.download-section .sideright .jpgpngcontainer .switch .btnjpg:active
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    border-color: rgb(70, 70, 70);
+    width: 10.5vh;
+    height: 10.5vh;
+}
+.download-section .sideright .jpgpngcontainer .switch .btnpng
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(188, 188, 188),gray);
+    font-size: 4vh;
+    width: 10vh;
+    height: 10vh;
+}
+.download-section .sideright .jpgpngcontainer .switch .btnpng:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    cursor: pointer;
+    border-radius: 1vh;
+    border: solid 0.1vh;
+    border-color: rgb(0, 0, 0);
+    background: radial-gradient(rgb(212, 212, 212),gray);
+    font-size: 4vh;
+    width: 11vh;
+    height: 11vh;
+}.download-section .sideright .jpgpngcontainer .switch .btnpng:active
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    border-color: rgb(70, 70, 70);
+    width: 10.5vh;
+    height: 10.5vh;
+}
+.download-section .sideright .jpgpngcontainer .jpgpngtext
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color:white;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.detail-section
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(gray, rgb(86, 86, 86));
+}
+.detail-section .box
+{
+    margin-top: 10vh
+}
+.detail-section .maintext
+{
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+.detail-section .box .png 
+{
+    display: flex;
+}
+.detail-section .box .png .sp
+{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 3vh;
+    padding: 1vh;
+}
+.detail-section .box .jpg
+{
+    display: flex;
+}
+.detail-section .box .jpg .sp
+{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 3vh;
+    padding: 1vh;
+}
+.detail-section .box .mainp
+{
+    font-size: 3vh;
+    padding-right: 1vh;
+    padding-left: 1vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
