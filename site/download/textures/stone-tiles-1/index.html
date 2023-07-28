@@ -26,7 +26,7 @@
             <div class="download-section">
                 <div class="sideleft">
                     <img id="imageslide" src="/display/stone_tiles.png">
-                    <div class="imagechoose"><img src="/display/stone_tiles.png"> <img src="/display/stone_tiles_notexture.png"></div>
+                    <div class="imagechoose"><img onclick="ImageSwitch(1);" src="/display/stone_tiles.png"> <img onclick="ImageSwitch(2);" src="/display/stone_tiles_notexture.png"></div>
                 </div>
                 <div class="sideright">
                     <div class="title">Stone Tiles 1</div>
@@ -39,7 +39,7 @@
                             <div class="jpgpngtext">Choose file format here:</div>
                             <div class="switch"><button class="btnjpg" onclick="ChangeFileFormat('jpg', this);">JPG</button> <button class="btnpng" onclick="ChangeFileFormat('png', this);">PNG</button></div>
                         </div>
-                        <div class="download-button"><button class="dwnbtn">Download</button></div>
+                        <div class="download-button"><button class="dwnbtn" onclick="DownloadFile();">Download</button></div>
                     </div>
                 </div>
             </div>
@@ -111,14 +111,15 @@
         </div>
     </div>
 
-    <script> // resolution changer
-    var resolution = "3K";
+    <script> // scripts
+    var resolution = "1K";
+    var file = "jpg";
 
     function ChangeResolution(type, changingtype) {
         
         if (type == "1k")
         {
-            var resolution = "1K";
+            resolution = "1K";
             changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
         }
         else
@@ -127,7 +128,7 @@
         }
         if (type == "3k")
         {
-            var resolution = "3K";
+            resolution = "3K";
             changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
         }
         else
@@ -135,33 +136,62 @@
             document.querySelector(".btn3").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
         }
     }
+
+    function ChangeFileFormat(type, changingtype) {
+        if (type == "jpg")
+        {
+            file = "jpg";
+            changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+        }
+        else
+        {
+            document.querySelector(".btnjpg").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+        }
+        if (type == "png")
+        {
+            file = "png";
+            changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+        }
+        else
+        {
+            document.querySelector(".btnpng").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+        }
+    }
+
+    function DownloadFile() {
+        if (file == "jpg" && resolution == "1K")
+        {
+            window.open("zipped-files/1K/stone_tiles_1_jpeg_1K.zip")
+        }
+        if (file == "png" && resolution == "1K")
+        {
+            window.open("zipped-files/1K/stone_tiles_1_png_1K.zip")
+        }
+        if (file == "jpg" && resolution == "3K")
+        {
+            window.open("zipped-files/3K/stone_tiles_1_jpeg_3K.zip")
+        }
+        if (file == "png" && resolution == "3K")
+        {
+            window.open("zipped-files/3K/stone_tiles_1_png_3K.zip")
+        }
+    }
         
     </script>
-    <script> // file format changer
-        var file = "jpg";
-    
-        function ChangeFileFormat(type, changingtype) {
-            
-            if (type == "jpg")
+    <script> //gallery changer
+    var imageslide = document.getElementById('imageslide');
+    const images = ["/display/stone_tiles.png","/display/stone_tiles_notexture.png"];
+
+        function ImageSwitch(number) {
+            if (number == 1)
             {
-                var file = "jpg";
-                changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+                imageslide.src = images[0];
             }
-            else
+            if (number == 2)
             {
-                document.querySelector(".btnjpg").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
-            }
-            if (type == "png")
-            {
-                var file = "png";
-                changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
-            }
-            else
-            {
-                document.querySelector(".btnpng").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+                imageslide.src = images[1];
             }
         }
-            
-        </script>
+    </script>
 </body>
 </html>
