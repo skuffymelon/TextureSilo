@@ -33,12 +33,13 @@
                     <div class="centering">
                         <div class="qcontainer">
                             <div class="qualitytext">Choose resolution here:</div>
-                            <div class="quality"><button class="btn1">1K</button> <button class="btn3">3K</button></div>
+                            <div class="quality"><button class="btn1" onclick="ChangeResolution('1k', this)">1K</button> <button class="btn3" onclick="ChangeResolution('3k', this)">3K</button></div>
                         </div>
                         <div class="jpgpngcontainer">
                             <div class="jpgpngtext">Choose file format here:</div>
-                            <div class="switch"><button class="btnjpg">JPG</button> <button class="btnpng">PNG</button></div>
+                            <div class="switch"><button class="btnjpg" onclick="ChangeFileFormat('jpg', this);">JPG</button> <button class="btnpng" onclick="ChangeFileFormat('png', this);">PNG</button></div>
                         </div>
+                        <div class="download-button"><button class="dwnbtn">Download</button></div>
                     </div>
                 </div>
             </div>
@@ -47,7 +48,7 @@
                     <h1>Details</h1>
                 </div>
                 <div class="box">
-                    <div class="png"> <p style="font-size: 6vh;">PNG</p>
+                    <div class="png"> <p style="font-size: 6vh; background-color: rgba(0, 0, 0, 0.6); color: white;">PNG</p>
                         <div class="resolution">
                             <p class="mainp">Resolution</p>
                             <p class="sp">1K</p>
@@ -76,7 +77,7 @@
                             <p class="sp">Photoshop</p>
                         </div>
                     </div>
-                    <div class="jpg"> <p style="font-size: 6vh;">JPEG</p>
+                    <div class="jpg"> <p style="font-size: 6vh; background-color: rgba(0, 0, 0, 0.6); color: white;">JPEG</p>
                         <div class="resolution">
                             <p class="mainp">Resolution</p>
                             <p class="sp">1K</p>
@@ -109,5 +110,58 @@
             </div>
         </div>
     </div>
+
+    <script> // resolution changer
+    var resolution = "3K";
+
+    function ChangeResolution(type, changingtype) {
+        
+        if (type == "1k")
+        {
+            var resolution = "1K";
+            changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+        }
+        else
+        {
+            document.querySelector(".btn1").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+        }
+        if (type == "3k")
+        {
+            var resolution = "3K";
+            changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+        }
+        else
+        {
+            document.querySelector(".btn3").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+        }
+    }
+        
+    </script>
+    <script> // file format changer
+        var file = "jpg";
+    
+        function ChangeFileFormat(type, changingtype) {
+            
+            if (type == "jpg")
+            {
+                var file = "jpg";
+                changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+            }
+            else
+            {
+                document.querySelector(".btnjpg").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+            }
+            if (type == "png")
+            {
+                var file = "png";
+                changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
+            }
+            else
+            {
+                document.querySelector(".btnpng").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
+            }
+        }
+            
+        </script>
 </body>
 </html>
