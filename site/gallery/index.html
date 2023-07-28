@@ -23,7 +23,81 @@
         </div>
         <div class="container">
             
+            <div class="main-image-container">
+                <div onclick="left();" class="arrow-left"> < </div>
+                <div class="image-container">
+                     <img id="image" src="/display/stone1.png">
+                     <div class="zoom-slider-container">
+                        <p style="color: white; font-size: 1.6vh;">Zoom:</p>
+                        <input type="range" min="75" max="100" value="75" class="slider" id="zoom-slider">
+                    </div>
+                </div>
+                <div onclick="right();" class="arrow-right"> > </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        var slider = document.getElementById("zoom-slider")
+        var image = document.getElementById("image")
+        var value1 = 75
+
+        slider.oninput = function() {
+            value1 = slider.value
+            image.style.width = value1 + "%"
+        }
+    </script>
+    <script>
+        var onimage = 1
+        var imageid = ["/display/stone1.png", "/display/stone_tiles.png", "/display/stone_tiles_notexture.png"]
+        var image = document.getElementById("image")
+
+        function right() {
+            if (onimage == 4)
+            {
+                onimage = 1
+            }
+            if (onimage == 3)
+            {
+                onimage = 4
+                image.src = imageid[2]
+            }
+            if (onimage == 2)
+            {
+                onimage = 3
+                image.src = imageid[1]
+            }
+            if (onimage == 1)
+            {
+                onimage = 2
+                image.src = imageid[0]
+            }
+            console.log(onimage);
+        }
+        function left() {
+            if (onimage == 4)
+            {
+                onimage = 3
+            }
+            if (onimage == 1)
+            {
+                onimage = 4
+                image.src = imageid[0]
+            }
+            if (onimage == 2)
+            {
+                onimage = 1
+                image.src = imageid[1]
+            }
+            if (onimage == 3)
+            {
+                onimage = 2
+                image.src = imageid[2]
+            }
+            
+            
+            console.log(onimage);
+        }
+    </script>
 </body>
 </html>
