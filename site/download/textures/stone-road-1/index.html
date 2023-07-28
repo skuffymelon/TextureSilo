@@ -25,15 +25,15 @@
         <div class="menu">
             <div class="download-section">
                 <div class="sideleft">
-                    <img id="imageslide" src="/display/stone_tiles.png">
-                    <div class="imagechoose"><img onclick="ImageSwitch(1);" src="/display/stone_tiles.png"> <img onclick="ImageSwitch(2);" src="/display/stone_tiles_notexture.png"></div>
+                    <img id="imageslide" src="/display/stone1.png">
+                    <div class="imagechoose"><img onclick="ImageSwitch(1);" src="/display/stone1.png"> <img onclick="ImageSwitch(2);" src="/site/download/representation/stone_road.png"></div>
                 </div>
                 <div class="sideright">
                     <div class="title">Stone Tiles 1</div>
                     <div class="centering">
                         <div class="qcontainer">
                             <div class="qualitytext">Choose resolution here:</div>
-                            <div class="quality"><button class="btn1" onclick="ChangeResolution('1k', this)">1K</button> <button class="btn3" onclick="ChangeResolution('3k', this)">3K</button></div>
+                            <div class="quality"><button class="btn1" onclick="ChangeResolution('2k', this)">2K</button></div>
                         </div>
                         <div class="jpgpngcontainer">
                             <div class="jpgpngtext">Choose file format here:</div>
@@ -51,59 +51,53 @@
                     <div class="png"> <p style="font-size: 6vh; background-color: rgba(0, 0, 0, 0.6); color: white;">PNG</p>
                         <div class="resolution">
                             <p class="mainp">Resolution</p>
-                            <p class="sp">1K</p>
-                            <p class="sp">3K</p>
+                            <p class="sp">2K</p>
                         </div>
                         <div class="pixels">
                             <p class="mainp">Pixels</p>
-                            <p class="sp">1024x1024</p>
-                            <p class="sp">3060x3060</p>
+                            <p class="sp">2048x2048</p>
                         </div>
                         <div class="size">
                             <p class="mainp">Size</p>
-                            <p class="sp">9,039 KB</p>
-                            <p class="sp">61,314 KB</p>
+                            <p class="sp">18,438 KB</p>
                         </div>
                         <div class="content">
                             <p class="mainp">Content</p>
                             <p class="sp">Diffuse Map</p>
-                            <p class="sp">Specular Map</p>
                             <p class="sp">Roughness Map</p>
                             <p class="sp">Normal Map</p>
                             <p class="sp">Displacement Map</p>
+                            <p class="sp">Ambient Occlusion Map</p>
                         </div>
                         <div class="progused">
                             <p class="mainp">Program Used</p>
-                            <p class="sp">Photoshop</p>
+                            <p class="sp">Materialize</p>
                         </div>
                     </div>
                     <div class="jpg"> <p style="font-size: 6vh; background-color: rgba(0, 0, 0, 0.6); color: white;">JPEG</p>
                         <div class="resolution">
                             <p class="mainp">Resolution</p>
-                            <p class="sp">1K</p>
-                            <p class="sp">3K</p>
+                            <p class="sp">2K</p>
                         </div>
                         <div class="pixels">
                             <p class="mainp">Pixels</p>
-                            <p class="sp">1024x1024</p>
-                            <p class="sp">3060x3060</p>
+                            <p class="sp">2048x2048</p>
                         </div>
                         <div class="size">
                             <p class="mainp">Size</p>
-                            <p class="sp">2,866 KB</p>
-                            <p class="sp">17,520 KB</p>
+                            <p class="sp">2,264 KB</p>
                         </div>
                         <div class="content">
                             <p class="mainp">Content</p>
                             <p class="sp">Diffuse Map</p>
-                            <p class="sp">Specular Map</p>
                             <p class="sp">Roughness Map</p>
                             <p class="sp">Normal Map</p>
                             <p class="sp">Displacement Map</p>
+                            <p class="sp">Ambient Occlusion Map</p>
                         </div>
                         <div class="progused">
                             <p class="mainp">Program Used</p>
-                            <p class="sp">Photoshop</p>
+                            <p class="sp">Materialize</p>
                         </div>
                     </div>
                 </div>
@@ -112,28 +106,19 @@
     </div>
 
     <script> // scripts
-    var resolution = "1K";
+    var resolution = "2K";
     var file = "jpg";
 
     function ChangeResolution(type, changingtype) {
         
-        if (type == "1k")
+        if (type == "2k")
         {
-            resolution = "1K";
+            resolution = "2K";
             changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
         }
         else
         {
             document.querySelector(".btn1").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
-        }
-        if (type == "3k")
-        {
-            resolution = "3K";
-            changingtype.style.background = "radial-gradient(rgb(255, 255, 255),gray)"
-        }
-        else
-        {
-            document.querySelector(".btn3").style.background = "radial-gradient(rgb(188, 188, 188),gray)"
         }
     }
 
@@ -159,28 +144,20 @@
     }
 
     function DownloadFile() {
-        if (file == "jpg" && resolution == "1K")
+        if (file == "jpg" && resolution == "2K")
         {
-            window.open("zipped-files/1K/stone_tiles_1_jpeg_1K.zip")
+            window.open("zipped-files/stone_road_1_jpg_2K.zip")
         }
-        if (file == "png" && resolution == "1K")
+        if (file == "png" && resolution == "2K")
         {
-            window.open("zipped-files/1K/stone_tiles_1_png_1K.zip")
-        }
-        if (file == "jpg" && resolution == "3K")
-        {
-            window.open("zipped-files/3K/stone_tiles_1_jpeg_3K.zip")
-        }
-        if (file == "png" && resolution == "3K")
-        {
-            window.open("zipped-files/3K/stone_tiles_1_png_3K.zip")
+            window.open("zipped-files/stone_road_1_png_2K.zip")
         }
     }
         
     </script>
     <script> //gallery changer
     var imageslide = document.getElementById('imageslide');
-    const images = ["/display/stone_tiles.png","/display/stone_tiles_notexture.png"];
+    const images = ["/display/stone1.png","/site/download/representation/stone_road.png"];
 
         function ImageSwitch(number) {
             if (number == 1)
