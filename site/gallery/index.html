@@ -22,7 +22,6 @@
             </div>
         </div>
         <div class="container">
-            
             <div class="main-image-container">
                 <div onclick="left();" class="arrow-left"> < </div>
                 <div class="image-container">
@@ -30,6 +29,8 @@
                      <div class="zoom-slider-container">
                         <p style="color: white; font-size: 1.6vh;">Zoom:</p>
                         <input type="range" min="75" max="100" value="75" class="slider" id="zoom-slider">
+                        <p style="color: white; font-size: 1.6vh;">Auto Switch Pictures:</p>
+                        <div onclick="turnonoff();" class="switch"></div>
                     </div>
                 </div>
                 <div onclick="right();" class="arrow-right"> > </div>
@@ -49,55 +50,170 @@
     </script>
     <script>
         var onimage = 1
-        var imageid = ["/display/stone1.png", "/display/stone_tiles.png", "/display/stone_tiles_notexture.png"]
+        var on = true;
+        var on1 = false;
+        var imageid = ["/display/stone1.png", "/display/stone_tiles.png", "/display/stone_tiles_notexture.png", "/display/fabric1.png","/display/fabric2.png"]
         var image = document.getElementById("image")
 
+        var left1 = document.querySelector(".arrow-left")
+        var right1 = document.querySelector(".arrow-right")
+        var container = document.querySelector(".container")
+
+        function turnonoff()
+        {
+            if (on1 == true)
+            {
+                on1 = false
+                on = true
+                update()
+                autoswitch()
+            } else
+            {
+                on1 = true
+                on = false
+                update()
+                autoswitch()
+            }
+        }
         function right() {
-            if (onimage == 4)
+            if (on1 == true)
             {
-                onimage = 1
-            }
-            if (onimage == 3)
+                if (onimage == 6)
+                {
+                    onimage = 1
+                }
+                if (onimage == 5)
+                {
+                    onimage = 6
+                    image.src = imageid[4]
+                }
+                if (onimage == 4)
+                {
+                    onimage = 5
+                    image.src = imageid[3]
+                }
+                if (onimage == 3)
+                {
+                    onimage = 4
+                    image.src = imageid[2]
+                }
+                if (onimage == 2)
+                {
+                    onimage = 3
+                    image.src = imageid[1]
+                }
+                if (onimage == 1)
+                {
+                    onimage = 2
+                    image.src = imageid[0]
+                }
+            } else
             {
-                onimage = 4
-                image.src = imageid[2]
+                return;
             }
-            if (onimage == 2)
-            {
-                onimage = 3
-                image.src = imageid[1]
-            }
-            if (onimage == 1)
-            {
-                onimage = 2
-                image.src = imageid[0]
-            }
-            console.log(onimage);
         }
         function left() {
-            if (onimage == 4)
-            {
-                onimage = 3
+            if (on1 == true) {
+                if (onimage == 6)
+                {
+                    onimage = 1
+                }
+                if (onimage == 5)
+                {
+                    onimage = 6
+                    image.src = imageid[4]
+                }
+                if (onimage == 4)
+                {
+                    onimage = 5
+                    image.src = imageid[3]
+                }
+                if (onimage == 3)
+                {
+                    onimage = 4
+                    image.src = imageid[2]
+                }
+                if (onimage == 2)
+                {
+                    onimage = 3
+                    image.src = imageid[1]
+                }
+                if (onimage == 1)
+                {
+                    onimage = 2
+                    image.src = imageid[0]
+                }
             }
-            if (onimage == 1)
+            else
             {
-                onimage = 4
-                image.src = imageid[0]
+                return;
             }
-            if (onimage == 2)
-            {
-                onimage = 1
-                image.src = imageid[1]
-            }
-            if (onimage == 3)
-            {
-                onimage = 2
-                image.src = imageid[2]
-            }
-            
-            
-            console.log(onimage);
         }
+        function autoswitch() {
+            if (on == true)
+            {
+                console.log(on, on1);
+                setTimeout(() => {
+                    if (on == true) 
+                    {
+                        autoswitch();
+                    }
+                    else
+                    {
+                        return
+                    }
+                    if (onimage == 6)
+                    {
+                        onimage = 1
+                    }
+                    if (onimage == 5)
+                    {
+                        onimage = 6
+                        image.src = imageid[4]
+                    }
+                    if (onimage == 4)
+                    {
+                        onimage = 5
+                        image.src = imageid[3]
+                    }
+                    if (onimage == 3)
+                    {
+                        onimage = 4
+                        image.src = imageid[2]
+                    }
+                    if (onimage == 2)
+                    {
+                        onimage = 3
+                        image.src = imageid[1]
+                    }
+                    if (onimage == 1)
+                    {
+                        onimage = 2
+                        image.src = imageid[0]
+                    }
+                }, 3000);
+            } else 
+            {
+                return;
+            }
+        }
+        function update()
+        {
+            if (on1 == false)
+            {
+                right1.style.display = "none"
+                left1.style.display = "none"
+                container.style.background = "linear-gradient(rgb(8,8,8), black)"
+            }
+            else
+            {
+                right1.style.display = "flex"
+                left1.style.display = "flex"
+                container.style.background = "linear-gradient(rgb(24,24,24), black)"
+            }
+        }
+        autoswitch()
+        update()
     </script>
 </body>
 </html>
