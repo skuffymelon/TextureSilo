@@ -47,11 +47,24 @@
                     </div>
                 </div>
             </div>
+            <div class="info-box">
+                <div class="box-part1">
+                    <div class="name">Brick Wall 1</div>
+                    <div class="imagerep"><img onload="changepic3('brick_wall_1', this)" src="representation/brick_wall_1_rep.png" alt=""></div>
+                </div>
+                <div class="box-part2">
+                    <div class="buttons">
+                        <div class="button-download"><button onclick="download('brick_wall_1')">Download</button></div>
+                        <div class="button-view"><button onclick="details('brick_wall_1')">View Details</button></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
         var diasbleloop1 = false;
         var diasbleloop2 = false;
+        var diasbleloop3 = false;
         function download(whattodownload) {
             if (whattodownload == "stone_tiles_1")
             {
@@ -112,6 +125,38 @@
                 diasbleloop2 = true;
                 var onimage = 1
                 const imageid = ["representation/stone_tiles_1_rep.png", "/display/stone_tiles.png"]
+                function change() {
+                    if (onimage == 3)
+                    {
+                        onimage = 1
+                    }
+                    if (onimage == 2)
+                    {
+                        onimage = 3
+                        callingelement.src = imageid[1]
+                    }
+                    if (onimage == 1)
+                    {
+                        onimage = 2
+                        callingelement.src = imageid[0]
+                    }
+                }
+                function loop() {
+                    setTimeout(() => {
+                        change();
+                        loop();
+                    }, 3000);
+                }
+                loop();
+            }
+        }
+
+            function changepic3(type, callingelement) {
+            if (type == "brick_wall_1" && diasbleloop3 == false)
+            {
+                diasbleloop3 = true;
+                var onimage = 1
+                const imageid = ["representation/brick_wall_1_rep.png", "representation/brick_wall_1_rep2.png"]
                 function change() {
                     if (onimage == 3)
                     {
