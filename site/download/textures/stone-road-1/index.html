@@ -11,22 +11,22 @@
         <div class="navbar">
 
             <div class="navbar-item-left">
-                <a href="/site/gallery">GALLERY</a>
+                <a href="../../../gallery/">GALLERY</a>
             </div>
     
             <div class="navbar-item-center">
-                <a href="/site/main">TEXTURESILO</a>
+                <a href="../../../main/">TEXTURESILO</a>
             </div>
     
             <div class="navbar-item-right">
-                <a href="/site/download">DOWNLOADS</a>
+                <a href="../../../download/">DOWNLOADS</a>
             </div>
         </div>
         <div class="menu">
             <div class="download-section">
                 <div class="sideleft">
-                    <img id="imageslide" src="/display/stone1.png">
-                    <div class="imagechoose"><img onclick="ImageSwitch(1);" src="/display/stone1.png"> <img onclick="ImageSwitch(2);" src="/site/download/representation/stone_road.png"></div>
+                    <img id="imageslide" src="../../../../display/stone1.png">
+                    <div class="imagechoose"><img onclick="ImageSwitch(1);" src="../../../../display/stone1.png"> <img onclick="ImageSwitch(2);" src="../../representation/stone_road.png"></div>
                 </div>
                 <div class="sideright">
                     <div class="title">Stone Road 1</div>
@@ -157,7 +157,7 @@
     </script>
     <script> //gallery changer
     var imageslide = document.getElementById('imageslide');
-    const images = ["/display/stone1.png","/site/download/representation/stone_road.png"];
+    const images = ["../../../../display/stone1.png","../../representation/stone_road.png"];
 
         function ImageSwitch(number) {
             if (number == 1)
