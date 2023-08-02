@@ -128,7 +128,6 @@ body
 {
     border-radius: 3vh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: fit-content;
